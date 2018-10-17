@@ -61,3 +61,33 @@ for val in setOfEvens {
 }
 
 
+//Optionals - variable that can have a value or optionally be null.
+
+
+var sideOfSquare: Int?
+
+// now this is forcefully unwrapping them. Can be error prone...
+//print("area of square \(sideOfSquare!*sideOfSquare!)");
+
+//The better way is:
+if let val = sideOfSquare {
+    print("area of square \(val*val)"); //will not be executed as sideOfSquare is nil
+}
+
+//now set the value
+sideOfSquare = 10;
+if let val = sideOfSquare {
+    print("area of square \(val*val)");
+}
+
+
+//Enums, Int is the type of raw value
+
+enum carType: Int {
+    case merc = 1
+    case bmw = 2
+    case vw = 3
+}
+
+
+var car = carType.merc
